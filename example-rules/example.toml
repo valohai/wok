@@ -1,0 +1,13 @@
+[ticktock]
+match-url = "^/clock"
+run = "/bin/bash -c 'echo $(date)'"
+input = true
+output = true
+throttle = 30
+
+[githubhook]
+match-url = "^/githubhook"
+match-body = [
+    {key = "repository.full_name", value = "valohai/wok"}
+]
+# master updated, yay :)
